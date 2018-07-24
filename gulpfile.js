@@ -33,7 +33,7 @@ gulp.task('watch-js', function () {
 });
 
 gulp.task('build-js', function () {
-    gulp.src('static/js/**/*.js')
+    gulp.src('static/app/js/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('static/js'))
 });

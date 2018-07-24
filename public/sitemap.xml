@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://faq.mdl.live/are_there_transaction_costs/</loc>
+    <loc>https://faq.mdl.live/en/payments/are_there_transaction_costs/</loc>
   </url>
   
   <url>
@@ -12,19 +12,28 @@
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/does_mdl_talent_hub_cost_money/</loc>
+    <loc>https://faq.mdl.live/en/business-model/does_mdl_talent_hub_cost_money/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/how_can_i_get_free_tokens/</loc>
+    <loc>https://faq.mdl.live/en/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/how_can_i_get_free_tokens1/</loc>
+    <loc>https://faq.mdl.live/en/payments/how_can_i_get_free_tokens/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/how_is_mdl_talent_hub_utilizing_blockchain_technology/</loc>
+    <loc>https://faq.mdl.live/en/tokens-bounty/how_can_i_get_free_tokens1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://faq.mdl.live/en/payments/how_can_i_pay_or_get_paid/</loc>
+  </url>
+  
+  <url>
+    <loc>https://faq.mdl.live/en/technology/how_is_mdl_talent_hub_utilizing_blockchain_technology/</loc>
   </url>
   
   <url>
@@ -43,7 +52,7 @@
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/types/tokens--bounty/</loc>
+    <loc>https://faq.mdl.live/types/tokens-bounty/</loc>
     <priority>0</priority>
   </url>
   
@@ -53,67 +62,63 @@
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_are_mdl_token_hours/</loc>
+    <loc>https://faq.mdl.live/en/tokens-bounty/what_are_mdl_token_hours/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_are_mdl_tokens/</loc>
+    <loc>https://faq.mdl.live/en/tokens-bounty/what_are_mdl_tokens/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/how_can_i_pay_or_get_paid/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_a_talent/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_a_talent/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_a_talent-agency/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_a_talent-agency/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_a_talent-booker/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_a_talent-booker/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_the_booking-ecosystem/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_the_booking-ecosystem/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_the_difference_between_a_talent_and_an_influencer/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_the_difference_between_a_talent_and_an_influencer/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_the_insurance-ecosystem/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_the_insurance-ecosystem/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_the_main_goal_of_mdl_talent_hub/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_the_main_goal_of_mdl_talent_hub/</loc>
+    <loc>https://faq.mdl.live/en/business-model/what_is_the_marketplace-ecosystem/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/what_is_the_marketplace-ecosystem/</loc>
+    <loc>https://faq.mdl.live/en/business-model/who_is_mdl_talent_hub_for/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/who_is_mdl_talent_hub_for/</loc>
+    <loc>https://faq.mdl.live/en/business-model/will_mdl_talent_hub_be_available_in_my_country/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/will_mdl_talent_hub_be_available_in_my_country/</loc>
+    <loc>https://faq.mdl.live/en/technology/will_mdl_talent_hub_utilize_artificial_inteligence/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/will_mdl_talent_hub_utilize_artificial_inteligence/</loc>
+    <loc>https://faq.mdl.live/en/technology/will_there_be_a_brand_gig_filter_on_the_platform/</loc>
   </url>
   
   <url>
-    <loc>https://faq.mdl.live/will_there_be_a_brand_gig_filter_on_the_platform/</loc>
-  </url>
-  
-  <url>
-    <loc>https://faq.mdl.live/will_there_be_a_talent_filter_on_the_platform/</loc>
+    <loc>https://faq.mdl.live/en/technology/will_there_be_a_talent_filter_on_the_platform/</loc>
   </url>
   
 </urlset>

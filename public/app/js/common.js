@@ -421,6 +421,7 @@
 }(jQuery));
 
 
+
 // Set default states 1
 function setDefaultStates() {
 
@@ -429,10 +430,26 @@ function setDefaultStates() {
     // question.find('p').addClass('question__text');
 
     // Set first type of content as default
-    var firstType = $('.bottom-header__item:eq(0)'),
-        firstTypeData = firstType.attr('data-type');
-    firstType.addClass('bottom-header__item_selected');
-    setVisibleContent(firstTypeData);
+    var items = $('.bottom-header__item');
+    var counter = 0;
+    items.each(function () {
+        console.log(document.location.href,$(this).parent()[0].href, document.location.href.indexOf($(this).parent()[0].href) !== -1)
+
+        if(document.location.href.indexOf($(this).parent()[0].href) !== -1) {
+            // $(this)
+            var firstType = $('.bottom-header__item:eq('+counter+')');
+            firstType.addClass('bottom-header__item_selected');
+
+        }
+
+        counter++
+    })
+
+
+    // firstTypeData = firstType.attr('data-type');
+
+
+    // setVisibleContent(firstTypeData);
 
     // Generates custom select from tag <select>
     $('.country__select').each(function () {
@@ -527,9 +544,9 @@ function setEvents() {
     $('.bottom-header__item').click(function () {
         var itemSelected = 'bottom-header__item_selected';
         var clickedTypeData = $(this).attr('data-type');
-        if ($(this).hasClass(itemSelected)) {
-            return;
-        }
+        // if ($(this).hasClass(itemSelected)) {
+        //     return;
+        // }
 
         $('.question').removeClass('question_opened');
         setVisibleContent(clickedTypeData);
@@ -545,11 +562,13 @@ function setVisibleContent(clickedTypeData) {
 
     var questionList = $('.question');
     questionList.each(function () {
-        if ($(this).attr('data-type').indexOf(clickedTypeData) > -1) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
+        // if ($(this).attr('data-type').indexOf(clickedTypeData) > -1) {
+        $(this).show();
+        $(this).removeClass('question_opened');
+        $('.question').removeClass('question_opened');
+        // } else {
+        //     $(this).hide();
+        // }
     });
 
 }
@@ -560,5 +579,16 @@ $(document).ready(function () {
     setDefaultStates();
     setEvents();
 
+    // var itemSelected = 'bottom-header__item_selected';
+    var clickedTypeData = $(this).attr('data-type');
+    // if ($(this).hasClass(itemSelected)) {
+    //     return;
+    // }
+
+    $('.question').removeClass('question_opened');
+    setVisibleContent(clickedTypeData);
+
+    // $('.bottom-header__item').removeClass(itemSelected);
+    // $(this).addClass(itemSelected);
 
 });
