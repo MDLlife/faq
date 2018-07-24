@@ -1,0 +1,22 @@
+@import "__list/bottom-header__list"
+@import "__item/bottom-header__item"
+
+.bottom-header
+	display: flex
+	flex-direction: row
+	justify-content: center
+	position: relative
+	top: 0
+	left: 0
+	z-index: 2
+	width: 100%
+	transition: all .6s ease-out
+	//transition-delay: .2s
+	transform: translateY(0)
+	&_sticky
+		position: fixed
+		transform: translateY(70px)
+	@media (max-width: 768px)
+		&_sticky
+			.bottom-header__list
+				width: calc(100% - 40px)

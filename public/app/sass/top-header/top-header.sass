@@ -1,0 +1,39 @@
+@import "__logo/top-header__logo"
+@import "__title/top-header__title"
+@import "../country/country"
+.top-header
+	top: -70px
+	left: 0
+	z-index: 3
+	padding: 13px 0
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+	width: 100%
+	transition: all .6s ease-out
+	box-sizing: border-box
+	&.top-header_sticky
+		top: 0
+		padding:  13px 167px
+		position: fixed
+		background: rgba(59,19,89,1)
+		background: -moz-linear-gradient(left, rgba(59,19,89,1) 0%, rgba(50,2,86,1) 100%)
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(59,19,89,1)), color-stop(100%, rgba(50,2,86,1)))
+		background: -webkit-linear-gradient(left, rgba(59,19,89,1) 0%, rgba(50,2,86,1) 100%)
+		background: -o-linear-gradient(left, rgba(59,19,89,1) 0%, rgba(50,2,86,1) 100%)
+		background: -ms-linear-gradient(left, rgba(59,19,89,1) 0%, rgba(50,2,86,1) 100%)
+		background: linear-gradient(to right, rgba(59,19,89,1) 0%, rgba(50,2,86,1) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b1359', endColorstr='#320256', GradientType=1 )
+		.top-header__title
+			opacity: 1
+	@media (max-width: 1200px)
+		&.top-header_sticky
+			padding: 13px 100px
+	@media (max-width: 768px)
+		&.top-header_sticky
+			padding: 13px 20px
+			.top-header__logo
+				display: none
+			.top-header__title
+				left: 0

@@ -1,0 +1,35 @@
+@import "../../fonts/fonts"
+.question__title
+	position: relative
+	margin: 0
+	font-family: $sans
+	font-size: 20px
+	font-weight: 700
+	color: #280244
+	&:before
+		content: ''
+		position: absolute
+		display: block
+		height: 16px
+		width: 2px
+		left: -37px
+		top: 3px
+		background-color: #280244
+		transition: all .5s ease
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		height: 16px
+		width: 2px
+		left: -37px
+		top: 3px
+		background-color: #280244
+		transform: rotate(90deg)
+		transition: all .5s ease
+	@media(max-width: 768px)
+		font-size: 16px
+		&:before
+			left: -35px
+		&:after
+			left: -35px

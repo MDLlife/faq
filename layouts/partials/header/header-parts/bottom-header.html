@@ -1,0 +1,10 @@
+<!-- BOTTOM HEADER PART -->
+<div class="bottom-header">
+    <ul class="bottom-header__list">
+        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies.types }}
+            <li class="bottom-header__item" data-type="{{ lower $taxonomyname }}"> {{ $taxonomyname }} </li>
+        {{ end }}
+    </ul>
+</div>
+
+</header>

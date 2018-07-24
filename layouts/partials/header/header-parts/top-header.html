@@ -1,0 +1,12 @@
+<!-- TOP HEADER PART -->
+<div class="top-header">
+    <img src="{{ "img/logo_mdl_header.png" | absURL }}" alt="" class="top-header__logo">
+    <span class="top-header__title">FAQ</span>
+    <div class="country">
+        <select name="countrySelect" class="country__select">
+            {{ range $.Site.Home.AllTranslations }}
+            <option value="{{ .Permalink }}">{{ .Language.LanguageName }}</option>>
+            {{ end }}
+        </select>
+    </div>
+</div>

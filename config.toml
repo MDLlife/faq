@@ -1,0 +1,23 @@
+baseURL = "https://faq.mdl.live"
+#baseURL = "http://localhost:4000"
+DefaultContentLanguage = "en"
+preserveTaxonomyNames = true
+title = "MDL - Talent Hub FAQ"
+
+[params]
+    telegram = "https://t.me/MDL_Talent_Hub"
+    keywords = "MDL,blockchain,talents,models,technology,app,IPFS"
+    description = "Blog of MDL Talent Hub. We create blockchain powered platform for talent sourcing industry."
+
+[taxonomies]
+    types = "types"
+
+[languages]
+  [languages.en]
+    title = "MDL - Talent Hub FAQ"
+    languageName = "English"
+    weight = 1
+    header_title_non_bold = "Question?"
+    header_title_bold = " Look here!"
+    header_sub_title = "Can't find answer? Email us at mdl@support.com or"
+    header_sub_title_link = "telegram chat"
