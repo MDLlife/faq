@@ -1,1 +1,539 @@
-function setDefaultStates(){var e=$(".bottom-header__item"),t=0;e.each(function(){if(console.log(document.location.href,$(this).parent()[0].href,-1!==document.location.href.indexOf($(this).parent()[0].href)),-1!==document.location.href.indexOf($(this).parent()[0].href)){$(".bottom-header__item:eq("+t+")").addClass("bottom-header__item_selected")}t++}),$(".country__select").each(function(){var e=$(this),t=$(this).children("option").length;e.addClass("select-hidden"),e.wrap('<div class="select"></div>'),e.after('<div class="select-styled"></div>');var i=e.next("div.select-styled");i.text(e.children("option").eq(0).text());for(var s=$("<ul />",{class:"select-options"}).insertAfter(i),o=0;o<t;o++){var n=window.location.href,a=e.children("option").eq(o).text(),r=e.children("option").eq(o).val(),l='<li><a href="'+r+'">'+a+"</a></li>";$(l).appendTo(s),n===e.children("option").eq(o).val()&&i.text(e.children("option").eq(o).text())}var d=s.children("li");i.click(function(e){e.stopPropagation(),$("div.select-styled.active").not(this).each(function(){$(this).removeClass("active").next("ul.select-options").hide()}),$(this).toggleClass("active").next("ul.select-options").toggle()}),d.click(function(t){t.stopPropagation(),i.text($(this).text()).removeClass("active"),e.val($(this).attr("rel")),s.hide()}),$(document).click(function(){i.removeClass("active"),s.hide()})})}function setEvents(){$(".question").click(function(){$(this).hasClass("question_opened")?($(this).removeClass("question_opened"),$(".question").removeClass("question_opened")):($(".question").removeClass("question_opened"),$(this).addClass("question_opened"))}),$(window).scroll(function(){var e=$(".header"),t=$(".top-header"),i=$(".bottom-header"),s=e.height();$(window).scrollTop()>s?(t.addClass("top-header_sticky"),i.addClass("bottom-header_sticky")):(t.removeClass("top-header_sticky"),i.removeClass("bottom-header_sticky"))}),$(".bottom-header__item").click(function(){var e="bottom-header__item_selected",t=$(this).attr("data-type");$(".question").removeClass("question_opened"),setVisibleContent(t),$(".bottom-header__item").removeClass(e),$(this).addClass(e)})}function setVisibleContent(e){$(".question").each(function(){$(this).show(),$(this).removeClass("question_opened"),$(".question").removeClass("question_opened")})}!function(e){function t(e,t){t=t.replace(/\b(0(?!\b))+/g,"");var i=t.replace(/( |\(|\)|\.|\-)/g,"");return!(i.length>19||i.length<6)}function s(e){var t;return"dd/mm/yyyy"==n&&(t=/^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g),"dd-mm-yyyy"==n?t=/^(((0[1-9]|[12]\d|3[01])-(0[13578]|1[02])-((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)-(0[13456789]|1[012])-((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])-02-((19|[2-9]\d)\d{2}))|(29-02-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g:"mm-dd-yyyy"==n&&(t=/^(((0[13578]|1[02])-(0[1-9]|[12]\d|3[01])-((19|[2-9]\d)\d{2}))|((0[13456789]|1[012])-(0[1-9]|[12]\d|30)-((19|[2-9]\d)\d{2}))|(02-(0[1-9]|1\d|2[0-8])-((19|[2-9]\d)\d{2}))|(02-29-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g),!!t.test(e)}function o(e,t){var i=t||window.event,s=i.keyCode||i.which;s=String.fromCharCode(s);var o=/[ +0-9()-]/;"date"==e&&(o=/[ 0-9-]/,e=0),(!o.test(s)||e>19)&&(i.returnValue=!1,s=i.keyCode,i.preventDefault&&9!=s&&8!=s&&i.preventDefault())}var n,a="sib",r="mm-dd-yyyy";if(n=e("input[name='hdn_new_format']").length?r:"dd/mm/yyyy",e(".tooltip").css({left:"101%"}),e("#"+a+"_embed_signup ."+a+"-container").find(".hidden-btns").remove(),e("#"+a+"_embed_signup ."+a+"-container").find(".message_area").remove(),e("body").on("submit","#sib_embed_signup1 #theform1,#sib_embed_signup #theform",function(){var o=e(this);if(o.hasClass(a+"_processing"))return!1;var r=o.closest(".forms-builder-wrapper");r.find("#"+a+"_loading_gif_area").width(o.width()).height(o.height());var l=o.find("#req_hid").val();l="email"==("undefined"==r.find("#primary_type").val()?"email":r.find("#primary_type").val())?"email"+l:"SMS"+l;var d=l.split("~"),c=r.find("#"+a+"_embed_signup_lang").val(),p="Please complete this field.",u=r.find("#"+a+"_embed_invalid_email_message").val(),h="The SMS field must contain between 6 and 19 digits.",f="Invalid date format";for("fr"==c?(p="Merci de remplir ce champ.",h="Le champ SMS doit contenir entre 6 et 19 chiffres.",f="Date de format invalide"):"es"==c?(p="Por favor, complete este campo",h="El campo SMS debe contener entre 6 y 19 cifras.",f="Formato de fecha no válido"):"pt"==c?(p="Preencha este campo.",h="O campo SMS deve conter entre 6 e 19 dígitos.",f="O formato da data é inválido"):"it"==c?(p="Compilare questo campo.",h="Il campo SMS deve contenere dai 6 ai 19 caratteri.",f="Il formato della data non è valido"):"de"==c&&(p="Bitte füllen Sie dieses Feld aus.",h="Das SMS-Feld muss 6 bis 19 Ziffern enthalten.",f="Ungültiges Datumsformat"),o.find("div.alert").remove(),o.find(".message_area").remove(),i=0;i<d.length;i++){var m=o.find('input[name="'+d[i]+'"]'),v=m.attr("type");if("text"==v)""==m.val()||m.val()==p?(m.closest(".row").addClass("needsfilled"),m.closest(".row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;"><button type="button" class="close">x</button>'+p+"</div>")):"email"==d[i]?/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(m.val())?m.closest(".row").removeClass("needsfilled"):(m.closest(".row").addClass("needsfilled"),m.closest(".row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 15px;"><button type="button" class="close">x</button>'+u+"</div>"),m.val("")):"SMS"==d[i]&&e("#sms_prefix").length&&""==e("#sms_prefix").val()?(m.closest(".row").addClass("needsfilled"),m.closest(".row").append('<div class="alert alert-danger" style="width: '+alert_width+alert_padding+'"><button type="button" class="close" style="'+button_style+'">x</button>'+p+"</div>")):m.closest(".row").removeClass("needsfilled");else if("radio"==v)0==m.is(":checked")&&(m.closest(".row").addClass("needsfilled"),m.closest(".row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;"><button type="button" class="close">x</button>'+p+"</div>"));else if("Captcha"==d[i]&&"undefined"!=typeof grecaptcha){var b=grecaptcha.getResponse();0==b.length?(e(".captcha > div.row").addClass("needsfilled"),e(".captcha > div.row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;"><button type="button" class="close">x</button>'+p+"</div>")):e(".captcha > div.row").removeClass("needsfilled")}else{var g=m.serializeArray();0==g.length?m.closest(".row").addClass("needsfilled"):m.closest(".row").removeClass("needsfilled")}}if(e(".row").each(function(){var i=e(this).find("span"),o=e(this).find("input"),a=o.width()+10,r=e(this).find("#sms_prefix").length>0?e(this).find("#sms_prefix").val():"";"SMS"==o.attr("name")&&(t(o,r+o.val())||""==o.val()||(o.closest(".row").addClass("needsfilled"),o.closest(".row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;width:'+a+';"><button type="button" class="close">x</button>'+h+"</div>"),o.val(""))),i.text()==n&&(s(o.val())||""==o.val()||(o.closest(".row").addClass("needsfilled"),o.closest(".row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;width:'+a+';"><button type="button" class="close">x</button>'+f+"</div>"),o.val("")))}),e("div.message_area button.close").on("click",function(){e(this).parent().remove()}),o.find("input").closest(".row").hasClass("needsfilled")||e(".captcha > div.row").hasClass("needsfilled"))return!1;var y=o.attr("action"),_=o.serialize();return o.addClass(a+"_processing"),o.parent().find("#"+a+"_loading_gif_area").show(),o.css("opacity","0.5"),e.ajax({url:y,data:_,dataType:"json",type:"POST",beforeSend:function(){},success:function(t){var i=e("."+a+"_processing");if(i.parent().find("#"+a+"_loading_gif_area").hide(),i.css("opacity","1"),void 0!=t.result){"success"==t.result.result||"emailExist"==t.result.result||"OK"==t.result.result||"OK_UPDATE"==t.result.result?(backColor="#dff0d8",borderColor="#d6e9c6",color="#ffffff",e(".sub-mob-alert").hide(),setTimeout(function(){e(".message_area").remove(),e(".sub-mob-alert").show()},3e3)):(backColor="#f2dede",borderColor="#ebccd1",color="#a94442");var s='<div class="message_area" style="background-color: '+backColor+";border:1px solid "+borderColor+"; color: "+color+'"><button type="button" class="close">x</button>';if("success"==t.result.result||"OK"==t.result.result){if(window.location.pathname.indexOf("ru")<0&&window.location.pathname.indexOf("zh")<0&&(s+="Awesome!<br>Now you are subscribed on MDL News"),window.location.pathname.indexOf("ru")>0&&(s+="Ура!<br>Теперь вы подписаны на MDL новости"),window.location.pathname.indexOf("zh")>0&&(s+="这么好！<br>现在您订阅MDL的新闻"),""!=t.result.smsExist){var o="",n=t.result.smsExist;o=t.result.smsExist_msg.split("[number]"),s+=". "+o[0]+n+o[1]}i.find("div.email-group input[type='text']").val(""),i.find("div.sms-group input[type='text']").val(""),""!=t.result.url_redirect&&(location.href=t.result.url_redirect)}else if("sms_emailExist"==t.result.result){var r="",l=t.result.emailExist;r=t.result.emailExist_msg.split("[address]"),s+=". "+r[0]+l+r[1]}else if("invalid_request"==t.result.result||"invalidEmail"==t.result.result)s+=t.result.invalid_err_msg;else if("invalidSms"==t.result.result)s+=t.result.invalidSms_msg;else if("emailExist"==t.result.result||"OK_UPDATE"==t.result.result){if(s+=t.result.exist_err_msg,""!=t.result.smsExist){var o="",n=t.result.smsExist;o=t.result.smsExist_msg.split("[number]"),s+=". "+o[0]+n+o[1]}}else"dateFormat"==t.result.result||"reqMiss"==t.result.result?s+=t.result.general_err_msg:"invalidCaptcha"==t.result.result&&(s+=t.result.general_err_msg);s+="</div>",i.find("."+a+"-container").prepend(s),e("div.message_area button.close").on("click",function(){e(this).parent().remove()}),i.removeClass(a+"_processing")}}}),!1}),e("#"+a+"_embed_signup :input").on("click",function(){e(this).closest(".row").hasClass("needsfilled")&&(e(this).closest(".row").find("div.message_area").remove(),e(this).val(""),"radio"==e(this).attr("type")&&e(this).val("1"),e(this).closest(".row").removeClass("needsfilled"))}),e("#"+a+"_embed_signup input[type=radio]").on("click",function(){e(this).closest(".row").hasClass("needsfilled")&&(e(this).attr("checked",!0),e(this).closest(".row").find("div.message_area").remove(),e(this).closest(".row").removeClass("needsfilled"))}),e("input").on("keypress",function(t){e(this).closest(".row").find("."+a+"_dateformat").length>0&&o("date",t)}),e("#SMS").on("keypress",function(t){o(e(this).val().length,t)}),e("input[type=number]").on("keypress",function(t){var i=t||window.event,s=i.keyCode||i.which;if(s=String.fromCharCode(s),!/[0-9]/.test(s)){i.returnValue=!1,s=i.keyCode,i.preventDefault&&9!=s&&8!=s&&i.preventDefault();var o=e(this).closest(".row"),n=o.closest(".forms-builder-wrapper").find("#"+a+"_embed_signup_lang").val(),r="Please enter a number.";"fr"==n?r="Veuillez entrer un nombre.":"es"==n?r="Please enter a number.":"pt"==n?r="Please enter a number.":"it"==n?r="Please enter a number.":"de"==n&&(r="Please enter a number."),o.find(".message_area").length||o.append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442"><button type="button" class="close">x</button>'+r+"</div>")}}),e(document).on("click",".message_area .close",function(){e(this).closest(".message_area").remove()}),e(document).on("click",".sib-dropdown-toggle.country-flg",function(){e(".country-block ul").toggle()}),e(document).on("click",".country-block ul li a",function(){var t=e(this).data("code"),i=e(this).data("c_code");e(".sib-dropdown-toggle .cflags").attr("class","cflags"),e(".sib-dropdown-toggle .cflags").addClass(i),e("#sms_prefix").val("+"+t),e(".country-block ul").hide()}),e(document).bind("click",function(t){e(t.target).parents().hasClass("country-block")||e(".country-block ul").hide()}),e(".sms_field .country-block").length){var l=e(".sib-dropdown-toggle .cflags").attr("class").split(" ");if(l[1]&&""!=l[1]){var d=e(".sib-dropdown-menu").find('[data-c_code="'+l[1]+'"]').data("code");e("#sms_prefix").val("+"+d)}else{e(".sib-dropdown-toggle .cflags").addClass("FR");var d=e(".sib-dropdown-menu").find('[data-c_code="FR"]').data("code");e("#sms_prefix").val("+"+d)}}e("#hdn_email_txt").val((new Date).getTime())}(jQuery),$(document).ready(function(){setDefaultStates(),setEvents();var e=$(this).attr("data-type");$(".question").removeClass("question_opened"),setVisibleContent(e)}),function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t(e.StickySidebar={})}(this,function(e){"use strict";function t(e){return e&&e.__esModule?e.default:e}function i(e,t){return t={exports:{}},e(t,t.exports),t.exports}var s=("undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self&&self,i(function(e,t){!function(e,i){i(t)}(0,function(e){function t(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(e,"__esModule",{value:!0});var i=function(){function e(e,t){for(var i=0;i<t.length;i++){var s=t[i];s.enumerable=s.enumerable||!1,s.configurable=!0,"value"in s&&(s.writable=!0),Object.defineProperty(e,s.key,s)}}return function(t,i,s){return i&&e(t.prototype,i),s&&e(t,s),t}}(),s=function(){var e=".stickySidebar",s={topSpacing:0,bottomSpacing:0,containerSelector:!1,innerWrapperSelector:".inner-wrapper-sticky",stickyClass:"is-affixed",resizeSensor:!0,minWidth:!1};return function(){function o(e){var i=this,n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(t(this,o),this.options=o.extend(s,n),this.sidebar="string"==typeof e?document.querySelector(e):e,void 0===this.sidebar)throw new Error("There is no specific sidebar element.");this.sidebarInner=!1,this.container=this.sidebar.parentElement,this.affixedType="STATIC",this.direction="down",this.support={transform:!1,transform3d:!1},this._initialized=!1,this._reStyle=!1,this._breakpoint=!1,this.dimensions={translateY:0,maxTranslateY:0,topSpacing:0,lastTopSpacing:0,bottomSpacing:0,lastBottomSpacing:0,sidebarHeight:0,sidebarWidth:0,containerTop:0,containerHeight:0,viewportHeight:0,viewportTop:0,lastViewportTop:0},["handleEvent"].forEach(function(e){i[e]=i[e].bind(i)}),this.initialize()}return i(o,[{key:"initialize",value:function(){var e=this;if(this._setSupportFeatures(),this.options.innerWrapperSelector&&(this.sidebarInner=this.sidebar.querySelector(this.options.innerWrapperSelector),null===this.sidebarInner&&(this.sidebarInner=!1)),!this.sidebarInner){var t=document.createElement("div");for(t.setAttribute("class","inner-wrapper-sticky"),this.sidebar.appendChild(t);this.sidebar.firstChild!=t;)t.appendChild(this.sidebar.firstChild);this.sidebarInner=this.sidebar.querySelector(".inner-wrapper-sticky")}if(this.options.containerSelector){var i=document.querySelectorAll(this.options.containerSelector);if(i=Array.prototype.slice.call(i),i.forEach(function(t,i){t.contains(e.sidebar)&&(e.container=t)}),!i.length)throw new Error("The container does not contains on the sidebar.")}"function"!=typeof this.options.topSpacing&&(this.options.topSpacing=parseInt(this.options.topSpacing)||0),"function"!=typeof this.options.bottomSpacing&&(this.options.bottomSpacing=parseInt(this.options.bottomSpacing)||0),this._widthBreakpoint(),this.calcDimensions(),this.stickyPosition(),this.bindEvents(),this._initialized=!0}},{key:"bindEvents",value:function(){window.addEventListener("resize",this,{passive:!0,capture:!1}),window.addEventListener("scroll",this,{passive:!0,capture:!1}),this.sidebar.addEventListener("update"+e,this),this.options.resizeSensor&&"undefined"!=typeof ResizeSensor&&(new ResizeSensor(this.sidebarInner,this.handleEvent),new ResizeSensor(this.container,this.handleEvent))}},{key:"handleEvent",value:function(e){this.updateSticky(e)}},{key:"calcDimensions",value:function(){if(!this._breakpoint){var e=this.dimensions;e.containerTop=o.offsetRelative(this.container).top,e.containerHeight=this.container.clientHeight,e.containerBottom=e.containerTop+e.containerHeight,e.sidebarHeight=this.sidebarInner.offsetHeight,e.sidebarWidth=this.sidebarInner.offsetWidth,e.viewportHeight=window.innerHeight,e.maxTranslateY=e.containerHeight-e.sidebarHeight,this._calcDimensionsWithScroll()}}},{key:"_calcDimensionsWithScroll",value:function(){var e=this.dimensions;e.sidebarLeft=o.offsetRelative(this.sidebar).left,e.viewportTop=document.documentElement.scrollTop||document.body.scrollTop,e.viewportBottom=e.viewportTop+e.viewportHeight,e.viewportLeft=document.documentElement.scrollLeft||document.body.scrollLeft,e.topSpacing=this.options.topSpacing,e.bottomSpacing=this.options.bottomSpacing,"function"==typeof e.topSpacing&&(e.topSpacing=parseInt(e.topSpacing(this.sidebar))||0),"function"==typeof e.bottomSpacing&&(e.bottomSpacing=parseInt(e.bottomSpacing(this.sidebar))||0),"VIEWPORT-TOP"===this.affixedType?e.topSpacing<e.lastTopSpacing&&(e.translateY+=e.lastTopSpacing-e.topSpacing,this._reStyle=!0):"VIEWPORT-BOTTOM"===this.affixedType&&e.bottomSpacing<e.lastBottomSpacing&&(e.translateY+=e.lastBottomSpacing-e.bottomSpacing,this._reStyle=!0),e.lastTopSpacing=e.topSpacing,e.lastBottomSpacing=e.bottomSpacing}},{key:"isSidebarFitsViewport",value:function(){return this.dimensions.sidebarHeight<this.dimensions.viewportHeight}},{key:"observeScrollDir",value:function(){var e=this.dimensions;if(e.lastViewportTop!==e.viewportTop){var t="down"===this.direction?Math.min:Math.max;e.viewportTop===t(e.viewportTop,e.lastViewportTop)&&(this.direction="down"===this.direction?"up":"down")}}},{key:"getAffixType",value:function(){this._calcDimensionsWithScroll();var e=this.dimensions,t=e.viewportTop+e.topSpacing,i=this.affixedType;return t<=e.containerTop||e.containerHeight<=e.sidebarHeight?(e.translateY=0,i="STATIC"):i="up"===this.direction?this._getAffixTypeScrollingUp():this._getAffixTypeScrollingDown(),e.translateY=Math.max(0,e.translateY),e.translateY=Math.min(e.containerHeight,e.translateY),e.translateY=Math.round(e.translateY),e.lastViewportTop=e.viewportTop,i}},{key:"_getAffixTypeScrollingDown",value:function(){var e=this.dimensions,t=e.sidebarHeight+e.containerTop,i=e.viewportTop+e.topSpacing,s=e.viewportBottom-e.bottomSpacing,o=this.affixedType;return this.isSidebarFitsViewport()?e.sidebarHeight+i>=e.containerBottom?(e.translateY=e.containerBottom-t,o="CONTAINER-BOTTOM"):i>=e.containerTop&&(e.translateY=i-e.containerTop,o="VIEWPORT-TOP"):e.containerBottom<=s?(e.translateY=e.containerBottom-t,o="CONTAINER-BOTTOM"):t+e.translateY<=s?(e.translateY=s-t,o="VIEWPORT-BOTTOM"):e.containerTop+e.translateY<=i&&0!==e.translateY&&e.maxTranslateY!==e.translateY&&(o="VIEWPORT-UNBOTTOM"),o}},{key:"_getAffixTypeScrollingUp",value:function(){var e=this.dimensions,t=e.sidebarHeight+e.containerTop,i=e.viewportTop+e.topSpacing,s=e.viewportBottom-e.bottomSpacing,o=this.affixedType;return i<=e.translateY+e.containerTop?(e.translateY=i-e.containerTop,o="VIEWPORT-TOP"):e.containerBottom<=s?(e.translateY=e.containerBottom-t,o="CONTAINER-BOTTOM"):this.isSidebarFitsViewport()||e.containerTop<=i&&0!==e.translateY&&e.maxTranslateY!==e.translateY&&(o="VIEWPORT-UNBOTTOM"),o}},{key:"_getStyle",value:function(e){if(void 0!==e){var t={inner:{},outer:{}},i=this.dimensions;switch(e){case"VIEWPORT-TOP":t.inner={position:"fixed",top:i.topSpacing,left:i.sidebarLeft-i.viewportLeft,width:i.sidebarWidth};break;case"VIEWPORT-BOTTOM":t.inner={position:"fixed",top:"auto",left:i.sidebarLeft,bottom:i.bottomSpacing,width:i.sidebarWidth};break;case"CONTAINER-BOTTOM":case"VIEWPORT-UNBOTTOM":var s=this._getTranslate(0,i.translateY+"px");t.inner=s?{transform:s}:{position:"absolute",top:i.translateY,width:i.sidebarWidth}}switch(e){case"VIEWPORT-TOP":case"VIEWPORT-BOTTOM":case"VIEWPORT-UNBOTTOM":case"CONTAINER-BOTTOM":t.outer={height:i.sidebarHeight,position:"relative"}}return t.outer=o.extend({height:"",position:""},t.outer),t.inner=o.extend({position:"relative",top:"",left:"",bottom:"",width:"",transform:""},t.inner),t}}},{key:"stickyPosition",value:function(t){if(!this._breakpoint){t=this._reStyle||t||!1;var i=this.getAffixType(),s=this._getStyle(i);if((this.affixedType!=i||t)&&i){var n="affix."+i.toLowerCase().replace("viewport-","")+e;o.eventTrigger(this.sidebar,n),"STATIC"===i?o.removeClass(this.sidebar,this.options.stickyClass):o.addClass(this.sidebar,this.options.stickyClass);for(var a in s.outer){var r="number"==typeof s.outer[a]?"px":"";this.sidebar.style[a]=s.outer[a]+r}for(var l in s.inner){var d="number"==typeof s.inner[l]?"px":"";this.sidebarInner.style[l]=s.inner[l]+d}var c="affixed."+i.toLowerCase().replace("viewport-","")+e;o.eventTrigger(this.sidebar,c)}else this._initialized&&(this.sidebarInner.style.left=s.inner.left);this.affixedType=i}}},{key:"_widthBreakpoint",value:function(){window.innerWidth<=this.options.minWidth?(this._breakpoint=!0,this.affixedType="STATIC",this.sidebar.removeAttribute("style"),o.removeClass(this.sidebar,this.options.stickyClass),this.sidebarInner.removeAttribute("style")):this._breakpoint=!1}},{key:"updateSticky",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};this._running||(this._running=!0,function(t){requestAnimationFrame(function(){switch(t){case"scroll":e._calcDimensionsWithScroll(),e.observeScrollDir(),e.stickyPosition();break;case"resize":default:e._widthBreakpoint(),e.calcDimensions(),e.stickyPosition(!0)}e._running=!1})}(t.type))}},{key:"_setSupportFeatures",value:function(){var e=this.support;e.transform=o.supportTransform(),e.transform3d=o.supportTransform(!0)}},{key:"_getTranslate",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0,t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0;return this.support.transform3d?"translate3d("+e+", "+t+", "+i+")":!!this.support.translate&&"translate("+e+", "+t+")"}},{key:"destroy",value:function(){window.removeEventListener("resize",this,{capture:!1}),window.removeEventListener("scroll",this,{capture:!1}),this.sidebar.classList.remove(this.options.stickyClass),this.sidebar.style.minHeight="",this.sidebar.removeEventListener("update"+e,this);var t={inner:{},outer:{}};t.inner={position:"",top:"",left:"",bottom:"",width:"",transform:""},t.outer={height:"",position:""};for(var i in t.outer)this.sidebar.style[i]=t.outer[i];for(var s in t.inner)this.sidebarInner.style[s]=t.inner[s];this.options.resizeSensor&&"undefined"!=typeof ResizeSensor&&(ResizeSensor.detach(this.sidebarInner,this.handleEvent),ResizeSensor.detach(this.container,this.handleEvent))}}],[{key:"supportTransform",value:function(e){var t=!1,i=e?"perspective":"transform",s=i.charAt(0).toUpperCase()+i.slice(1),o=["Webkit","Moz","O","ms"],n=document.createElement("support"),a=n.style;return(i+" "+o.join(s+" ")+s).split(" ").forEach(function(e,i){if(void 0!==a[e])return t=e,!1}),t}},{key:"eventTrigger",value:function(e,t,i){try{var s=new CustomEvent(t,{detail:i})}catch(e){var s=document.createEvent("CustomEvent");s.initCustomEvent(t,!0,!0,i)}e.dispatchEvent(s)}},{key:"extend",value:function(e,t){var i={};for(var s in e)void 0!==t[s]?i[s]=t[s]:i[s]=e[s];return i}},{key:"offsetRelative",value:function(e){var t={left:0,top:0};do{var i=e.offsetTop,s=e.offsetLeft;isNaN(i)||(t.top+=i),isNaN(s)||(t.left+=s),e="BODY"===e.tagName?e.parentElement:e.offsetParent}while(e);return t}},{key:"addClass",value:function(e,t){o.hasClass(e,t)||(e.classList?e.classList.add(t):e.className+=" "+t)}},{key:"removeClass",value:function(e,t){o.hasClass(e,t)&&(e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp("(^|\\b)"+t.split(" ").join("|")+"(\\b|$)","gi")," "))}},{key:"hasClass",value:function(e,t){return e.classList?e.classList.contains(t):new RegExp("(^| )"+t+"( |$)","gi").test(e.className)}},{key:"defaults",get:function(){return s}}]),o}()}();e.default=s,window.StickySidebar=s})})),o=t(s);e.default=o,e.__moduleExports=s,Object.defineProperty(e,"__esModule",{value:!0})});
+//--------------------------
+// Validate & submit process
+//--------------------------
+(function ($) {
+    var sib_prefix = 'sib';
+    var sib_dateformat = 'mm-dd-yyyy';
+    var dateFormat;
+    if ($("input[name='hdn_new_format']").length) {
+        dateFormat = sib_dateformat;
+    }
+    else {
+        dateFormat = 'dd/mm/yyyy';
+    }
+    $('.tooltip').css({left: '101%'});
+
+    // check if inputed sms value is valid
+    function isValidSms(smsField, sms) {
+        sms = sms.replace(/\b(0(?!\b))+/g, "");
+
+        var tempSms = sms.replace(/( |\(|\)|\.|\-)/g, '');
+        if (tempSms.length > 19 || tempSms.length < 6) {
+            return false;
+        }
+        return true;
+    }
+
+    // check if inputed date value is valid
+    function isValidDate(date) {
+        var filter;
+        if (dateFormat == 'dd/mm/yyyy') {
+            filter = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g;
+        }
+
+        if (dateFormat == 'dd-mm-yyyy') {
+            filter = /^(((0[1-9]|[12]\d|3[01])-(0[13578]|1[02])-((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)-(0[13456789]|1[012])-((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])-02-((19|[2-9]\d)\d{2}))|(29-02-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g;
+        }
+        else if (dateFormat == 'mm-dd-yyyy') {
+            filter = /^(((0[13578]|1[02])-(0[1-9]|[12]\d|3[01])-((19|[2-9]\d)\d{2}))|((0[13456789]|1[012])-(0[1-9]|[12]\d|30)-((19|[2-9]\d)\d{2}))|(02-(0[1-9]|1\d|2[0-8])-((19|[2-9]\d)\d{2}))|(02-29-((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g;
+        }
+
+        if (filter.test(date)) {
+            return true;
+        }
+        return false;
+    }
+
+    // allow to input digit and + only for sms
+    function validateInteger(smsLength, evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+
+        // 0-9, +/-, space, brackets
+        var regex = /[ +0-9()-]/;
+        if (smsLength == 'date') {
+            regex = /[ 0-9-]/;
+            smsLength = 0;
+        }
+        if (!regex.test(key) || smsLength > 19) {
+            theEvent.returnValue = false;
+            key = theEvent.keyCode;
+            // ignore input for del,tab, back, left, right, home and end key
+            if (theEvent.preventDefault && key != 9 && key != 8) theEvent.preventDefault();
+        }
+    }
+
+    $('#' + sib_prefix + '_embed_signup .' + sib_prefix + '-container').find('.hidden-btns').remove();
+    $('#' + sib_prefix + '_embed_signup .' + sib_prefix + '-container').find('.message_area').remove();
+
+    $('body').on('submit', '#sib_embed_signup1 #theform1,#sib_embed_signup #theform', function () {
+        var theForm = $(this);
+        if (theForm.hasClass(sib_prefix + '_processing')) {
+            return false;
+        }
+
+        var wrapper = theForm.closest('.forms-builder-wrapper');
+
+        wrapper.find('#' + sib_prefix + '_loading_gif_area').width(theForm.width()).height(theForm.height());
+
+        var reqField = theForm.find('#req_hid').val();
+
+        var primaryType = wrapper.find('#primary_type').val() == 'undefined' ? 'email' : wrapper.find('#primary_type').val();
+        if (primaryType == 'email') {
+            reqField = 'email' + reqField;
+        } else {
+            reqField = 'SMS' + reqField;
+        }
+        var required = reqField.split("~");
+        var sendinblueFormLang = wrapper.find('#' + sib_prefix + '_embed_signup_lang').val();
+        var emptyError = "Please complete this field.";
+        var emailError = wrapper.find('#' + sib_prefix + '_embed_invalid_email_message').val();
+        var smsError = 'The SMS field must contain between 6 and 19 digits.';
+        var dateError = "Invalid date format";
+
+        if (sendinblueFormLang == "fr") {
+            emptyError = "Merci de remplir ce champ.";
+            smsError = 'Le champ SMS doit contenir entre 6 et 19 chiffres.';
+            dateError = "Date de format invalide";
+        }
+        else if (sendinblueFormLang == "es") {
+            emptyError = "Por favor, complete este campo";
+            smsError = 'El campo SMS debe contener entre 6 y 19 cifras.';
+            dateError = "Formato de fecha no válido";
+        }
+        else if (sendinblueFormLang == "pt") {
+            emptyError = "Preencha este campo.";
+            smsError = 'O campo SMS deve conter entre 6 e 19 dígitos.';
+            dateError = "O formato da data é inválido";
+        }
+        else if (sendinblueFormLang == "it") {
+            emptyError = "Compilare questo campo.";
+            smsError = 'Il campo SMS deve contenere dai 6 ai 19 caratteri.';
+            dateError = "Il formato della data non è valido";
+        }
+        else if (sendinblueFormLang == "de") {
+            emptyError = "Bitte füllen Sie dieses Feld aus.";
+            smsError = 'Das SMS-Feld muss 6 bis 19 Ziffern enthalten.';
+            dateError = "Ungültiges Datumsformat";
+        }
+
+        theForm.find('div.alert').remove();
+        theForm.find('.message_area').remove();
+
+        for (i = 0; i < required.length; i++) {
+
+            var input = theForm.find('input[name="' + required[i] + '"]');
+
+            var inputType = input.attr('type');
+            if (inputType == 'text') {
+                if (input.val() == "" || input.val() == emptyError) {
+                    input.closest('.row').addClass("needsfilled");
+                    input.closest('.row').append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;"><button type="button" class="close">x</button>' + emptyError + '</div>');
+                }
+                else {
+                    if (required[i] == 'email') {
+                        if (!/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(input.val())) {
+                            input.closest('.row').addClass("needsfilled");
+                            input.closest('.row').append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 15px;"><button type="button" class="close">x</button>' + emailError + '</div>');
+                            input.val('');
+                        } else {
+                            input.closest('.row').removeClass("needsfilled");
+                        }
+                    }
+                    else if (required[i] == 'SMS') {
+                        if ($('#sms_prefix').length && $('#sms_prefix').val() == '') {
+                            input.closest('.row').addClass("needsfilled");
+                            input.closest('.row').append('<div class="alert alert-danger" style="width: ' + alert_width + alert_padding + '"><button type="button" class="close" style="' + button_style + '">x</button>' + emptyError + '</div>');
+                        }
+                        else {
+                            input.closest('.row').removeClass("needsfilled");
+                        }
+                    }
+                    else {
+                        input.closest('.row').removeClass("needsfilled");
+                    }
+                }
+            }
+            else if (inputType == 'radio') {
+                if (input.is(':checked') == false) {
+                    input.closest('.row').addClass("needsfilled");
+                    input.closest('.row').append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;"><button type="button" class="close">x</button>' + emptyError + '</div>');
+                }
+            } else if (required[i] == 'Captcha' && typeof grecaptcha != 'undefined') {
+                var captchaResponse = grecaptcha.getResponse();
+                if (captchaResponse.length == 0) {
+                    $(".captcha > div.row").addClass("needsfilled");
+                    $(".captcha > div.row").append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;"><button type="button" class="close">x</button>' + emptyError + '</div>');
+
+                } else {
+                    $(".captcha > div.row").removeClass("needsfilled");
+                }
+            } else {
+                var fields = input.serializeArray();
+                if (fields.length == 0) {
+                    input.closest('.row').addClass("needsfilled");
+                }
+                else {
+                    input.closest('.row').removeClass("needsfilled");
+                }
+            }
+        }
+        $(".row").each(function () {
+            var spanElement = $(this).find('span');
+            var ele = $(this).find("input");
+            var alertWidth = ele.width() + 10;
+            var smsPrefix = ($(this).find('#sms_prefix').length > 0 ) ? $(this).find('#sms_prefix').val() : '';
+            if (ele.attr('name') == 'SMS') {
+                if (!isValidSms(ele, smsPrefix + ele.val()) && ele.val() != "") {
+                    ele.closest('.row').addClass("needsfilled");
+                    ele.closest('.row').append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;width:' + alertWidth + ';"><button type="button" class="close">x</button>' + smsError + '</div>');
+                    ele.val('');
+                }
+            }
+
+            if (spanElement.text() == dateFormat) {
+                if (!isValidDate(ele.val()) && ele.val() != "") {
+                    ele.closest('.row').addClass("needsfilled");
+                    ele.closest('.row').append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442;margin-top: 5px;width:' + alertWidth + ';"><button type="button" class="close">x</button>' + dateError + '</div>');
+                    ele.val('');
+                }
+            }
+        });
+        $('div.message_area button.close').on('click', function () {
+            $(this).parent().remove();
+        });
+
+        if (theForm.find('input').closest('.row').hasClass("needsfilled") || $(".captcha > div.row").hasClass("needsfilled")) {
+            return false;
+        } else {
+
+            //errornotice.closest('.row').hide();
+            // submit ajax process --> coding here
+            var requestUrl = theForm.attr('action');
+            var postData = theForm.serialize();
+            theForm.addClass(sib_prefix + '_processing');
+            theForm.parent().find('#' + sib_prefix + '_loading_gif_area').show();
+            theForm.css('opacity', '0.5');
+            $.ajax({
+                url: requestUrl,
+                data: postData,
+                dataType: 'json',
+                type: 'POST',
+                beforeSend: function () {
+                },
+                success: function (data) {
+                    var theForm = $('.' + sib_prefix + '_processing');
+
+                    theForm.parent().find('#' + sib_prefix + '_loading_gif_area').hide();
+                    theForm.css('opacity', '1');
+                    if (data.result != undefined) {
+                        if ((data.result.result == 'success') || (data.result.result == 'emailExist') || (data.result.result == 'OK') || (data.result.result == 'OK_UPDATE')) {
+                            backColor = '#dff0d8';
+                            borderColor = '#d6e9c6';
+                            color = '#ffffff';
+                            $(".sub-mob-alert").hide();
+                            setTimeout(function () {
+                                $('.message_area').remove();
+                                $(".sub-mob-alert").show();
+                            }, 3000);
+                        }
+                        else {
+                            backColor = '#f2dede';
+                            borderColor = '#ebccd1';
+                            color = '#a94442';
+                        }
+
+                        var messageHtml = '<div class="message_area" style="background-color: ' + backColor + ';border:1px solid ' + borderColor + '; color: ' + color + '"><button type="button" class="close">x</button>';
+                        if (data.result.result == 'success' || data.result.result == 'OK') {
+                            if (window.location.pathname.indexOf('ru') < 0 && window.location.pathname.indexOf('zh') < 0) {
+                                messageHtml += 'Awesome!<br>Now you are subscribed on MDL News'
+                            }
+                            if (window.location.pathname.indexOf('ru') > 0) {
+                                messageHtml += 'Ура!<br>Теперь вы подписаны на MDL новости'
+                            }
+                            if (window.location.pathname.indexOf('zh') > 0) {
+                                messageHtml += '这么好！<br>现在您订阅MDL的新闻'
+                            }
+                            if (data.result.smsExist != '') {
+                                var smsMSG = '';
+                                var smsNumber = data.result.smsExist;
+                                smsMSG = data.result.smsExist_msg.split('[number]');
+
+                                messageHtml += '. ' + smsMSG[0] + smsNumber + smsMSG[1];
+                            }
+                            theForm.find("div.email-group input[type='text']").val('');
+                            theForm.find("div.sms-group input[type='text']").val('');
+                            if (data.result.url_redirect != '') {
+                                location.href = data.result.url_redirect;
+                            }
+                        }
+                        else if (data.result.result == 'sms_emailExist') {
+                            var emailMSG = '';
+                            var emailAddress = data.result.emailExist;
+                            emailMSG = data.result.emailExist_msg.split('[address]');
+
+                            messageHtml += '. ' + emailMSG[0] + emailAddress + emailMSG[1];
+                        }
+                        else if (data.result.result == 'invalid_request' || data.result.result == 'invalidEmail') {
+                            messageHtml += data.result.invalid_err_msg;
+                        }
+                        else if (data.result.result == 'invalidSms') {
+                            messageHtml += data.result.invalidSms_msg;
+                        }
+                        else if (data.result.result == 'emailExist' || data.result.result == 'OK_UPDATE') {
+                            messageHtml += data.result.exist_err_msg;
+                            if (data.result.smsExist != '') {
+                                var smsMSG = '';
+                                var smsNumber = data.result.smsExist;
+                                smsMSG = data.result.smsExist_msg.split('[number]');
+
+                                messageHtml += '. ' + smsMSG[0] + smsNumber + smsMSG[1];
+                            }
+                        }
+                        else if (data.result.result == 'dateFormat' || data.result.result == 'reqMiss') {
+                            messageHtml += data.result.general_err_msg;
+                        } else if (data.result.result == 'invalidCaptcha') {
+                            messageHtml += data.result.general_err_msg;
+                        }
+                        messageHtml += '</div>';
+                        theForm.find('.' + sib_prefix + '-container').prepend(messageHtml);
+                        $('div.message_area button.close').on('click', function () {
+                            $(this).parent().remove();
+                        });
+                        theForm.removeClass(sib_prefix + '_processing');
+                    }
+                }
+            });
+        }
+        return false;
+    });
+
+    $('#' + sib_prefix + '_embed_signup :input').on('click', function () {
+        if ($(this).closest('.row').hasClass("needsfilled")) {
+            $(this).closest('.row').find('div.message_area').remove();
+            $(this).val("");
+            if ($(this).attr('type') == 'radio')
+                $(this).val("1");
+            $(this).closest('.row').removeClass("needsfilled");
+        }
+    });
+
+    $('#' + sib_prefix + '_embed_signup input[type=radio]').on('click', function () {
+        if ($(this).closest('.row').hasClass("needsfilled")) {
+            $(this).attr('checked', true);
+            $(this).closest('.row').find('div.message_area').remove();
+            $(this).closest('.row').removeClass("needsfilled");
+        }
+    });
+
+    // allow to input 0-9 and - only for date field
+    $("input").on('keypress', function (event) {
+        if ($(this).closest(".row").find("." + sib_prefix + "_dateformat").length > 0) {
+            validateInteger('date', event);
+        }
+    });
+
+    $("#SMS").on('keypress', function (event) {
+        var length = $(this).val().length;
+        validateInteger(length, event);
+    });
+
+    $("input[type=number]").on('keypress', function (event) {
+        var theEvent = event || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+
+        // 0-9, +/-, space, brackets
+        var regex = /[0-9]/;
+
+        if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            key = theEvent.keyCode;
+            // ignore input for del,tab, back, left, right, home and end key
+            if (theEvent.preventDefault && key != 9 && key != 8) theEvent.preventDefault();
+            var eleRow = $(this).closest('.row');
+            var frmLang = eleRow.closest('.forms-builder-wrapper').find('#' + sib_prefix + '_embed_signup_lang').val();
+            var numberError = "Please enter a number.";
+            if (frmLang == "fr") {
+                numberError = "Veuillez entrer un nombre.";
+            }
+            else if (frmLang == "es") {
+                numberError = "Please enter a number.";
+            }
+            else if (frmLang == "pt") {
+                numberError = "Please enter a number.";
+            }
+            else if (frmLang == "it") {
+                numberError = "Please enter a number.";
+            }
+            else if (frmLang == "de") {
+                numberError = "Please enter a number.";
+            }
+            if (!eleRow.find('.message_area').length) {
+                eleRow.append('<div class="message_area" style="background-color: #f2dede;border:1px solid #ebccd1; color: #a94442"><button type="button" class="close">x</button>' + numberError + '</div>');
+            }
+        }
+    });
+
+    $(document).on('click', '.message_area .close', function () {
+        $(this).closest('.message_area').remove();
+    });
+
+    $(document).on('click', '.sib-dropdown-toggle.country-flg', function () {
+        $(".country-block ul").toggle();
+    });
+
+    $(document).on('click', '.country-block ul li a', function () {
+        var code = $(this).data('code');
+        var cCode = $(this).data('c_code');
+        $('.sib-dropdown-toggle .cflags').attr('class', 'cflags');
+        $('.sib-dropdown-toggle .cflags').addClass(cCode);
+
+        // update country prefix
+        $('#sms_prefix').val('+' + code);
+
+        $(".country-block ul").hide();
+    });
+
+    $(document).bind('click', function (e) {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass("country-block"))
+            $(".country-block ul").hide();
+    });
+
+    if ($('.sms_field .country-block').length) {
+        var cflagsClasses = $('.sib-dropdown-toggle .cflags').attr('class').split(' ');
+        if (cflagsClasses[1] && cflagsClasses[1] != '') {
+            var countryCode = $('.sib-dropdown-menu').find('[data-c_code="' + cflagsClasses[1] + '"]').data('code');
+            // update country prefix
+            $('#sms_prefix').val('+' + countryCode);
+        }
+        else {
+            $('.sib-dropdown-toggle .cflags').addClass('FR');
+            var countryCode = $('.sib-dropdown-menu').find('[data-c_code="FR"]').data('code');
+            // update country prefix
+            $('#sms_prefix').val('+' + countryCode);
+        }
+    }
+    // set last submit to avoid refresh post
+    $("#hdn_email_txt").val(new Date().getTime());
+}(jQuery));
+
+
+// Set default states 1
+function setDefaultStates() {
+
+    // Generates custom select from tag <select>
+    $('.country__select').each(function () {
+        var $this = $(this),
+            numberOfOptions = $(this).children('option').length;
+
+        $this.addClass('select-hidden');
+        $this.wrap('<div class="select"></div>');
+        $this.after('<div class="select-styled"></div>');
+
+        var $styledSelect = $this.next('div.select-styled');
+        $styledSelect.text($this.children('option').eq(0).text());
+
+
+        var $list = $('<ul />', {
+            'class': 'select-options'
+        }).insertAfter($styledSelect);
+
+        for (var i = 0; i < numberOfOptions; i++) {
+            var pageHref = window.location.href;
+            var linkText = $this.children('option').eq(i).text();
+            var linkHref = $this.children('option').eq(i).val();
+            var linkTemplate = '<li><a href="' + linkHref + '">' + linkText + '</a></li>';
+            $(linkTemplate).appendTo($list);
+            if (pageHref === $this.children('option').eq(i).val()) {
+                $styledSelect.text($this.children('option').eq(i).text());
+            }
+        }
+
+        var $listItems = $list.children('li');
+
+        $styledSelect.click(function (e) {
+            e.stopPropagation();
+            $('div.select-styled.active').not(this).each(function () {
+                $(this).removeClass('active').next('ul.select-options').hide();
+            });
+            $(this).toggleClass('active').next('ul.select-options').toggle();
+        });
+
+        $listItems.click(function (e) {
+            e.stopPropagation();
+            $styledSelect.text($(this).text()).removeClass('active');
+            $this.val($(this).attr('rel'));
+            $list.hide();
+            //console.log($this.val());
+        });
+
+        $(document).click(function () {
+            $styledSelect.removeClass('active');
+            $list.hide();
+        });
+
+    });
+
+}
+
+// Set all events
+function setEvents() {
+
+    function setActiveMenuType() {
+        var pageHref = window.location.pathname,
+            bottomHeaderItems = $('.bottom-header__item');
+        bottomHeaderItems.each(function () {
+            if (pageHref.indexOf($(this).data('type')) > -1) {
+                $(this).addClass('bottom-header__item_selected');
+            }
+        });
+    }
+    setActiveMenuType();
+
+    // Click event on question block
+    $('.question').click(function () {
+        if ($(this).hasClass('question_opened')) {
+            $(this).removeClass('question_opened');
+            $('.question').removeClass('question_opened');
+        } else {
+            $('.question').removeClass('question_opened');
+            $(this).addClass('question_opened');
+        }
+
+    });
+
+    // Creating sticky header
+    $(window).scroll(function () {
+        var header = $('.header');
+        var topHeader = $('.top-header');
+        var bottomHeader = $('.bottom-header');
+
+        var headerHeight = header.height();
+
+        var currentScrollTop = $(window).scrollTop();
+        if (currentScrollTop > headerHeight) {
+            topHeader.addClass('top-header_sticky');
+            bottomHeader.addClass('bottom-header_sticky');
+        } else {
+            topHeader.removeClass('top-header_sticky');
+            bottomHeader.removeClass('bottom-header_sticky');
+        }
+    });
+}
+// Initialization
+$(document).ready(function () {
+    (function () {
+        var defaultPageHref     = window.location.origin + '/',
+            currentPageHref     = window.location.href,
+            currentHTMLLang     = $('html').attr('lang'),
+            currentPageHrefLang = defaultPageHref + currentHTMLLang + '/';
+        if (currentPageHref === defaultPageHref || currentPageHref === currentPageHrefLang) {
+            window.location.replace(currentPageHref + 'types/business-model/');
+        }
+    })();
+    setEvents();
+    setDefaultStates();
+});
