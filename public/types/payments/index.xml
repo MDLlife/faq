@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Payments on MDL - Talent Hub FAQ</title>
-    <link>https://faq.mdl.live/types/payments/</link>
+    <link>http://localhost:1313/types/payments/</link>
     <description>Recent content in Payments on MDL - Talent Hub FAQ</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://faq.mdl.live/types/payments/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/types/payments/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Are there transaction costs?</title>
-      <link>https://faq.mdl.live/en/payments/are_there_transaction_costs/</link>
+      <link>http://localhost:1313/are_there_transaction_costs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://faq.mdl.live/en/payments/are_there_transaction_costs/</guid>
+      <guid>http://localhost:1313/are_there_transaction_costs/</guid>
       <description>Yes and No, if you use MDL Tokens there won’t be a transaction cost. If you use a credit card, PayPal, or another payment method, there will be a transaction cost.</description>
     </item>
     
     <item>
       <title>How can I get free tokens?</title>
-      <link>https://faq.mdl.live/en/payments/how_can_i_get_free_tokens/</link>
+      <link>http://localhost:1313/how_can_i_get_free_tokens/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://faq.mdl.live/en/payments/how_can_i_get_free_tokens/</guid>
+      <guid>http://localhost:1313/how_can_i_get_free_tokens/</guid>
       <description>Free tokens, or &amp;ldquo;Bounty&amp;rdquo; can be collected in various ways. If you want to learn more about this, it is best that we refer you to an article that talks all about our bounty program which you can find HERE.</description>
     </item>
     
     <item>
       <title>How can I pay or get paid</title>
-      <link>https://faq.mdl.live/en/payments/how_can_i_pay_or_get_paid/</link>
+      <link>http://localhost:1313/how_can_i_pay_or_get_paid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://faq.mdl.live/en/payments/how_can_i_pay_or_get_paid/</guid>
+      <guid>http://localhost:1313/how_can_i_pay_or_get_paid/</guid>
       <description>Currently there are two ways, the classic way which is through credit card or PayPal transactions or the more beneficial way: MDL Tokens</description>
     </item>
     

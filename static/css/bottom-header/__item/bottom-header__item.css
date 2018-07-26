@@ -15,7 +15,6 @@
 .bottom-header__item {
   display: inline-block;
   margin: 0;
-  padding: 20px 54px;
   font-family: "Gilroy-Light";
   font-weight: 600;
   font-size: 16px;
@@ -29,11 +28,25 @@
   .bottom-header__item_selected {
     background-color: #ff2394;
     color: white !important; }
+    .bottom-header__item_selected a {
+      color: white !important; }
   .bottom-header__item:hover {
     color: #8a7599; }
+  .bottom-header__item a {
+    display: block;
+    padding: 20px 54px;
+    font-family: "Gilroy-Light";
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #380D58;
+    text-decoration: none; }
+    @media (max-width: 768px) {
+      .bottom-header__item a {
+        padding: 12px 5px;
+        font-size: 12px; } }
   @media (max-width: 768px) {
     .bottom-header__item {
-      padding: 12px 5px;
       -webkit-box-flex: 1;
       -webkit-flex-grow: 1;
           -ms-flex-positive: 1;

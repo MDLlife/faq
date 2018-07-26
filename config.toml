@@ -1,7 +1,7 @@
 baseURL = "https://faq.mdl.live"
-#baseURL = "http://localhost:4000"
+#baseURL = "http://localhost:1313"
 DefaultContentLanguage = "en"
-preserveTaxonomyNames = true
+#preserveTaxonomyNames = true
 title = "MDL - Talent Hub FAQ"
 
 [params]
@@ -10,8 +10,9 @@ title = "MDL - Talent Hub FAQ"
     description = "Blog of MDL Talent Hub. We create blockchain powered platform for talent sourcing industry."
 
 [taxonomies]
-    types = "types"
-
+    type = "types"
+[permalinks]
+    post = "/:section/:title/"
 [languages]
   [languages.en]
     title = "MDL - Talent Hub FAQ"
@@ -21,3 +22,4 @@ title = "MDL - Talent Hub FAQ"
     header_title_bold = " Look here!"
     header_sub_title = "Can't find answer? Email us at mdl@support.com or"
     header_sub_title_link = "telegram chat"
+    mdl_email = "team@mdl.life"

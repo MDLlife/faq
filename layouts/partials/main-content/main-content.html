@@ -2,7 +2,7 @@
     <div class="main-content__inner">
         {{ range .Data.Pages }}
             {{ range .Params.types }}<article class="question" data-type="{{ lower . }}">{{ end }}
-                <a href="{{ .Permalink }}"><h3 class="question__title">{{ .Title }}</h3></a>
+                <a class="question-link" href="#{{ .File.BaseFileName }}"><h3 class="question__title">{{ .Title }}</h3></a>
                 <div class="question__inner">
                     {{ .Content }}
                 </div>

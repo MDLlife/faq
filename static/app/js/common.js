@@ -421,35 +421,8 @@
 }(jQuery));
 
 
-
 // Set default states 1
 function setDefaultStates() {
-
-    // Fix bug with question text
-    // var question = $('.question');
-    // question.find('p').addClass('question__text');
-
-    // Set first type of content as default
-    var items = $('.bottom-header__item');
-    var counter = 0;
-    items.each(function () {
-        console.log(document.location.href,$(this).parent()[0].href, document.location.href.indexOf($(this).parent()[0].href) !== -1)
-
-        if(document.location.href.indexOf($(this).parent()[0].href) !== -1) {
-            // $(this)
-            var firstType = $('.bottom-header__item:eq('+counter+')');
-            firstType.addClass('bottom-header__item_selected');
-
-        }
-
-        counter++
-    })
-
-
-    // firstTypeData = firstType.attr('data-type');
-
-
-    // setVisibleContent(firstTypeData);
 
     // Generates custom select from tag <select>
     $('.country__select').each(function () {
@@ -509,9 +482,20 @@ function setDefaultStates() {
 // Set all events
 function setEvents() {
 
+    function setActiveMenuType() {
+        var pageHref = window.location.pathname,
+            bottomHeaderItems = $('.bottom-header__item');
+        bottomHeaderItems.each(function () {
+            if (pageHref.indexOf($(this).data('type')) > -1) {
+                $(this).addClass('bottom-header__item_selected');
+            }
+        });
+    }
+    setActiveMenuType();
+
     // Click event on question block
     $('.question').click(function () {
-        if($(this).hasClass('question_opened')){
+        if ($(this).hasClass('question_opened')) {
             $(this).removeClass('question_opened');
             $('.question').removeClass('question_opened');
         } else {
@@ -538,57 +522,18 @@ function setEvents() {
             bottomHeader.removeClass('bottom-header_sticky');
         }
     });
-
-    // Click event on bottom-header items
-    // Set necessary content in main-content block
-    $('.bottom-header__item').click(function () {
-        var itemSelected = 'bottom-header__item_selected';
-        var clickedTypeData = $(this).attr('data-type');
-        // if ($(this).hasClass(itemSelected)) {
-        //     return;
-        // }
-
-        $('.question').removeClass('question_opened');
-        setVisibleContent(clickedTypeData);
-
-        $('.bottom-header__item').removeClass(itemSelected);
-        $(this).addClass(itemSelected);
-    });
-
 }
-
-// Set visible content depending on type
-function setVisibleContent(clickedTypeData) {
-
-    var questionList = $('.question');
-    questionList.each(function () {
-        // if ($(this).attr('data-type').indexOf(clickedTypeData) > -1) {
-        $(this).show();
-        $(this).removeClass('question_opened');
-        $('.question').removeClass('question_opened');
-        // } else {
-        //     $(this).hide();
-        // }
-    });
-
-}
-
 // Initialization
 $(document).ready(function () {
-
-    setDefaultStates();
+    (function () {
+        var defaultPageHref     = window.location.origin + '/',
+            currentPageHref     = window.location.href,
+            currentHTMLLang     = $('html').attr('lang'),
+            currentPageHrefLang = defaultPageHref + currentHTMLLang + '/';
+        if (currentPageHref === defaultPageHref || currentPageHref === currentPageHrefLang) {
+            window.location.replace(currentPageHref + 'types/business-model/');
+        }
+    })();
     setEvents();
-
-    // var itemSelected = 'bottom-header__item_selected';
-    var clickedTypeData = $(this).attr('data-type');
-    // if ($(this).hasClass(itemSelected)) {
-    //     return;
-    // }
-
-    $('.question').removeClass('question_opened');
-    setVisibleContent(clickedTypeData);
-
-    // $('.bottom-header__item').removeClass(itemSelected);
-    // $(this).addClass(itemSelected);
-
+    setDefaultStates();
 });

@@ -1,10 +1,9 @@
 <!-- BOTTOM HEADER PART -->
 <div class="bottom-header">
     <ul class="bottom-header__list">
-        <a style="text-decoration: none;" href="/types/business-model"><li class="bottom-header__item" data-type="business model">Business Model</li></a>
-        <a style="text-decoration: none;" href="/types/payments"><li class="bottom-header__item" data-type="payments">Payments</li></a>
-        <a style="text-decoration: none;" href="/types/technology"><li class="bottom-header__item" data-type="technology">Technology</li></a>
-        <a style="text-decoration: none;" href="/types/tokens-bounty"><li class="bottom-header__item" data-type="tokens bounty">Tokens Bounty</li></a>
+        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies.types }}
+            <li class="bottom-header__item" data-type="{{ lower $taxonomyname }}"><a href="{{ "/types/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a></li>
+        {{ end }}
     </ul>
 </div>
 
