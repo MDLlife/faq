@@ -1,5 +1,5 @@
 ---
 title: Does MDL Talent Hub cost money? 
-types: ["Business Model"]
+categories: ["Business_Model"]
 ---
 No

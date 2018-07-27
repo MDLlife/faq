@@ -1,9 +1,10 @@
 <main class="main-content">
     <div class="main-content__inner">
-        <article class="question">
+        <article class="question question_opened">
             <h3 class="question__title">{{ .Title }}</h3>
-
-            {{ .Content }}
+            <div class="question__inner">
+                {{ .Content }}
+            </div>
         </article>
     </div>
 </main>

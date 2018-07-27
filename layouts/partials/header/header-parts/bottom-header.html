@@ -1,10 +1,21 @@
 <!-- BOTTOM HEADER PART -->
 <div class="bottom-header">
     <ul class="bottom-header__list">
-        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies.types }}
-            <li class="bottom-header__item" data-type="{{ lower $taxonomyname }}"><a href="{{ "/types/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a></li>
+        {{ range $taxonomyname, $taxonomy := .Site.Taxonomies.categories }}
+            <li class="bottom-header__item" data-type="{{ lower $taxonomyname }}"><a href="{{ "/categories/" | relLangURL}}{{ $taxonomyname | urlize }}">{{ $taxonomyname }}</a></li>
         {{ end }}
     </ul>
+    {{if .IsHome}}
+        <script>
+            var bottomHeaderItems = document.getElementsByClassName('bottom-header__item');
+            for(var i = 0; i < bottomHeaderItems.length; i++) {
+                var linkText = bottomHeaderItems[i].getElementsByTagName('a')[0].innerText;
+                if( linkText.indexOf('model') > -1 ) {
+                    bottomHeaderItems[i].classList.add('bottom-header__item_selected');
+                    break;
+                }
+            }
+        </script>
+    {{end}}
 </div>
-
 </header>

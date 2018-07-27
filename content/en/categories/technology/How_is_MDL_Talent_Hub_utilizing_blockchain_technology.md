@@ -1,6 +1,6 @@
 ---
 title: How is MDL Talent Hub utilizing blockchain technology?
-types: ["Technology"]
+categories: ["Technology"]
 ---
 1. Transactions -> faster, cheaper and worldwide availability
 	1. Token hour benefit, learn more <a href="https://mdl.wtf/en/2018-05-06-what-is-the-mdl-token-hour-economy/" target="_blank">HERE</a>.
