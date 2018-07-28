@@ -1,5 +1,6 @@
 baseURL = "https://faq.mdl.live"
 #baseURL = "http://localhost:1313"
+#baseURL = "http://localhost:4000"
 DefaultContentLanguage = "en"
 #preserveTaxonomyNames = true
 title = "MDL - Talent Hub FAQ"
