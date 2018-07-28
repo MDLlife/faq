@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on MDL - Talent Hub FAQ</title>
+    <link>https://faq.mdl.live/categories/technology/</link>
+    <description>Recent content in Technology on MDL - Talent Hub FAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://faq.mdl.live/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How is MDL Talent Hub utilizing blockchain technology?</title>
+      <link>https://faq.mdl.live/en/categories/technology/how_is_mdl_talent_hub_utilizing_blockchain_technology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/en/categories/technology/how_is_mdl_talent_hub_utilizing_blockchain_technology/</guid>
+      <description>Transactions -&amp;gt; faster, cheaper and worldwide availability  Token hour benefit, learn more HERE.  Used to secure the reputation data. -&amp;gt; Saving pics and videos on the decentralized storage. This means there is no centralized storage space, the information or data is divided into pieces and stored across multiple locations. The code necessary to compile this puzzle of data back to order, is called a hash sum. The hash sum is stored on the blockchain.</description>
+    </item>
+    
+    <item>
+      <title>Will MDL Talent Hub utilize Artificial Inteligence?</title>
+      <link>https://faq.mdl.live/en/categories/technology/will_mdl_talent_hub_utilize_artificial_inteligence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/en/categories/technology/will_mdl_talent_hub_utilize_artificial_inteligence/</guid>
+      <description>Yes, there are 3 big problems that we are focussing on fixing with AI. You can read all about it HERE</description>
+    </item>
+    
+    <item>
+      <title>Will there be a brand/gig filter on the platform?</title>
+      <link>https://faq.mdl.live/en/categories/technology/will_there_be_a_brand_gig_filter_on_the_platform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/en/categories/technology/will_there_be_a_brand_gig_filter_on_the_platform/</guid>
+      <description>Yes, we are making sure that posting a collaboration request or gig availability will be detailed enough to find it based on your interest, availability and location.</description>
+    </item>
+    
+    <item>
+      <title>Will there be a talent filter on the platform?</title>
+      <link>https://faq.mdl.live/en/categories/technology/will_there_be_a_talent_filter_on_the_platform/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/en/categories/technology/will_there_be_a_talent_filter_on_the_platform/</guid>
+      <description>Yes, we have a system that will require new talents to specify the most asked about traits when they first set up their account, to ensure that they have higher chances of being found for gigs that match their profile.</description>
+    </item>
+    
+  </channel>
+</rss>

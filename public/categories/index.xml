@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on MDL - Talent Hub FAQ</title>
+    <link>https://faq.mdl.live/categories/</link>
+    <description>Recent content in Categories on MDL - Talent Hub FAQ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://faq.mdl.live/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Business_model</title>
+      <link>https://faq.mdl.live/categories/business_model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/categories/business_model/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Payments</title>
+      <link>https://faq.mdl.live/categories/payments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/categories/payments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technology</title>
+      <link>https://faq.mdl.live/categories/technology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/categories/technology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tokens_bounty</title>
+      <link>https://faq.mdl.live/categories/tokens_bounty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://faq.mdl.live/categories/tokens_bounty/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
