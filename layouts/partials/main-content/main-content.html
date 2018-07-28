@@ -1,13 +1,24 @@
 <main class="main-content">
     <div class="main-content__inner">
-        {{ range .Data.Pages }}
-            {{ range .Params.types }}<article class="question" data-type="{{ lower . }}">{{ end }}
-                <a href="{{ .Permalink }}"><h3 class="question__title">{{ .Title }}</h3></a>
-                <div class="question__inner">
-                    {{ .Content }}
-                </div>
-            </article>
-        {{ end }}
+        {{if .IsHome}}
+            {{ range .Site.Taxonomies.categories.business_model }}
+                <article class="question">
+                    <a class="question-link" href="{{ .Permalink }}"><h3 class="question__title">{{ .Title }}</h3></a>
+                    <div class="question__inner">
+                        {{ .Content }}
+                    </div>
+                </article>
+            {{ end }}
+        {{else}}
+            {{ range .Data.Pages }}
+                <article class="question">
+                    <a class="question-link" href="{{ .Permalink }}"><h3 class="question__title">{{ .Title }}</h3></a>
+                    <div class="question__inner">
+                        {{ .Content }}
+                    </div>
+                </article>
+            {{ end }}
+        {{end}}
     </div>
 </main>
 

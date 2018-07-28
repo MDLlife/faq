@@ -18,7 +18,8 @@
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #280244; }
+  color: #280244;
+  text-decoration: none; }
   .question__title:before {
     content: '';
     position: absolute;

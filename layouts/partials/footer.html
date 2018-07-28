@@ -1,93 +1,91 @@
-<footer class="footer">
-    <div class="footer__inner">
-        <div class="footer__top">
-            <h3 class="footer__title"><span class="footer__title_bold">Follow</span> us</h3>
-            <img src=" {{"/img/bubble.png" | absURL}}" alt="" class="footer__bubble">
-        </div>
-        <div class="footer__bottom">
-            <div class="subscribe-form subscribe-form_footer">
-                <p class="subscribe-form__title">Sign up for timely alerts and announcements</p>
-                <div id="sib_embed_signup">
-                    <div class="forms-builder-wrapper">
-                        <input type="hidden" id="sib_embed1_signup_lang" value="en">
-                        <input type="hidden" id="sib_embed1_invalid_email_message"
-                               value="That email address is not valid. Please try again.">
-                        <input type="hidden" name="primary_type" id="primary_type" value="email">
-                        <form class="description" id="theform" name="theform"
-                              action="https://my.sendinblue.com/users/subscribeembed/js_id/346pc/id/1"
-                              onsubmit="return false;">
-                            <input type="hidden" name="js_id" id="js_id" value="346pc"><input type="hidden"
-                                                                                              name="listid"
-                                                                                              id="listid1"
-                                                                                              value="2"><input
-                                type="hidden" name="from_url" id="from_url1" value="yes"><input type="hidden"
-                                                                                                name="hdn_email_txt"
-                                                                                                id="hdn_email_txt1"
-                                                                                                value="">
-                            <div class="sib-container rounded">
-                                <input type="hidden" name="req_hid" id="req_hid" value=""
-                                       style="font-size: 13px;">
-                                <div class="view-messages" style=" margin:5px 0;"></div>
-                                <div class="primary-group email-group forms-builder-group ui-sortable" style="">
-                                    <div class="row mandatory-email" style="position: relative">
-                                        <input type="text" name="email" id="email1" value=""
-                                               placeholder="E-mail">
-                                        <button class="button editable " type="submit"
-                                                data-editfield="subscribe">
-                                            Subscribe
-                                        </button>
-                                        <div style="clear:both;"></div>
-                                        <div class="hidden-btns">
-                                            <a class="btn move" href="#"><i class="fa fa-arrows"></i></a><br>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="captcha forms-builder-group" style="display: none;">
-                                    <div class="row"
-                                         style="font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; color: rgb(103, 48, 145); font-size: 25px; padding: 10px 20px;">
-                                        <div id="gcaptcha" style="transform: scale(1); margin-left: 0px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    var sib_prefix = 'sib';
-                    var sib_dateformat = 'mm-dd-yyyy';
-                </script>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="link-f--wrapper">
+                <a class="link-f" target="_blank" href="https://mdl.life/whitepaper/WhitePaper_eng_1.6.4.pdf">White paper</a>
+                <a class="link-f" href="http://mdl.wtf" target="_blank">Blog</a>
             </div>
-            <div class="sidebar-social sidebar-social_footer">
-                <ul class="sidebar-social__list">
-                    <li class="sidebar-social__icon sidebar-social__icon_footer"><a href="#"
-                                                                                    class="sidebar-social__link"><img
-                            src=" {{"/img/fb.svg" | absURL}}"
-                            alt=""
-                            class="sidebar-social__image"></a>
-                    </li>
-                    <li class="sidebar-social__icon sidebar-social__icon_footer"><a href="#"
-                                                                                    class="sidebar-social__link"><img
-                            src=" {{"/img/twitter.svg" | absURL}}"
-                            class="sidebar-social__image"></a>
-                    </li>
-                    <li class="sidebar-social__icon sidebar-social__icon_footer"><a href="#"
-                                                                                    class="sidebar-social__link"><img
-                            src=" {{"/img/fb.svg" | absURL}}"
-                            alt=""
-                            class="sidebar-social__image"></a>
-                    </li>
-                    <li class="sidebar-social__icon sidebar-social__icon_footer"><a href="#"
-                                                                                    class="sidebar-social__link"><img
-                            src=" {{"/img/twitter.svg" | absURL}}" alt=""
-                            class="sidebar-social__image"></a>
-                    </li>
-                    <li class="sidebar-social__icon sidebar-social__icon_footer"><a href="#"
-                                                                                    class="sidebar-social__link"><img
-                            src=" {{"/img/fb.svg" | absURL}}"
-                            alt=""
-                            class="sidebar-social__image"></a>
-                    </li>
-                </ul>
+            <ul>
+                <li class="community-link">
+                    <a href="https://fb.me/mdl.wtf" target="_blank">
+                        <img class="one" src="{{ "img/footer/fb_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/fb2.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://github.com/MDLlife/" target="_blank">
+                        <img class="one" src="{{ "img/footer/Github_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/Github_f2.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://www.linkedin.com/company/18324359/" target="_blank">
+                        <img class="one" src="{{ "img/footer/linkedin_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/linkedin2.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://steemit.com/@mdl" target="_blank">
+                        <img class="one" src="{{ "img/footer/steemit_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/steemit2.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://t.me/MDL_Talent_Hub" target="_blank">
+                        <img class="one" src="{{ "img/footer/telegram_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/telegrammm22.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://twitter.com/MDL_Talent_Hub" target="_blank")>
+                        <img class="one" src="{{ "img/footer/twitter_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/twitter22.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://www.youtube.com/channel/UCa8YMIZgtCo6a7M6tcjtG9g" target="_blank">
+                        <img class="one" src="{{ "img/footer/youtube_f.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/youtube_f2.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://bitcointalk.org/index.php?topic=2621034" target="_blank">
+                        <img class="one" src="{{ "img/footer/btt_logo.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/btt_logo.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://www.instagram.com/mdl_talent_hub/" target="_blank">
+                        <img class="one" src="{{ "img/footer/inst.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/inst.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+                <li class="community-link">
+                    <a href="https://vk.com/mdl_talent_hub" target="_blank">
+                        <img class="one" src="{{ "img/footer/vk.svg" | absURL }}">
+                        <img class="two" src="{{ "img/footer/vk.svg" | absURL }}" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="media-banner-wrapper">
+                <div class="media-banner">
+                    <a target="_blank" href="https://riseconf.com"><img
+                            src="{{ "img/media/R18_badgesAlpha.png" | absURL }}" alt=""></a>
+                </div>
+            </div>
+            <h2><a href="#">MDL<span>Talent Hub</span></a></h2>
+            <div class="col-md-3 offset-md-1 f-t">
+                <a href="https://mdl.life/docs/MDL_Terms_Of_Use.pdf" target="_blank">Website Terms of Use</a>
+                <br>
+                <a href="https://mdl.life/docs/MDL_Privacy_Policy.pdf" target="_blank">Privacy Policy</a> <br>
+                <a href="https://mdl.life/docs/MDL_Terms_And_Conditions.pdf" target="_blank">MDL Token Crowdsale
+                    Agreement</a> <br>
+                <a href="http://explorer.mdl.life" target="_blank">MDL Explorer</a> <br>
+            </div>
+            <div class="col-md-4 f-g">
+                MDL (SG) PTE. LTD. (201807451Z) <br>
+                6 RAFFLES QUAY #33-03 <br>
+                HONG LEONG BUILDING SINGAPORE (048581) <br>
             </div>
         </div>
     </div>
