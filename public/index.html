@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.30.2" />
+	<meta name="generator" content="Hugo 0.38-DEV" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Token MDL blog">
@@ -53,17 +53,28 @@
 <div class="bottom-header">
     <ul class="bottom-header__list">
         
-            <li class="bottom-header__item" data-type="business-model"><a href="/types/business-model">business-model</a></li>
+            <li class="bottom-header__item" data-type="business_model"><a href="/categories/business_model">business_model</a></li>
         
-            <li class="bottom-header__item" data-type="payments"><a href="/types/payments">payments</a></li>
+            <li class="bottom-header__item" data-type="payments"><a href="/categories/payments">payments</a></li>
         
-            <li class="bottom-header__item" data-type="technology"><a href="/types/technology">technology</a></li>
+            <li class="bottom-header__item" data-type="technology"><a href="/categories/technology">technology</a></li>
         
-            <li class="bottom-header__item" data-type="tokens-bounty"><a href="/types/tokens-bounty">tokens-bounty</a></li>
+            <li class="bottom-header__item" data-type="tokens_bounty"><a href="/categories/tokens_bounty">tokens_bounty</a></li>
         
     </ul>
+    
+        <script>
+            var bottomHeaderItems = document.getElementsByClassName('bottom-header__item');
+            for(var i = 0; i < bottomHeaderItems.length; i++) {
+                var linkText = bottomHeaderItems[i].getElementsByTagName('a')[0].innerText;
+                if( linkText.indexOf('model') > -1 ) {
+                    bottomHeaderItems[i].classList.add('bottom-header__item_selected');
+                    break;
+                }
+            }
+        </script>
+    
 </div>
-
 </header>
 
 
@@ -71,187 +82,98 @@
 <main class="main-content">
     <div class="main-content__inner">
         
-            <article class="question" data-type="payments">
-                <a class="question-link" href="#Are_there_transaction_costs"><h3 class="question__title">Are there transaction costs?</h3></a>
-                <div class="question__inner">
-                    <p>Yes and No, if you use MDL Tokens there won’t be a transaction cost. If you use a credit card, PayPal, or another payment method, there will be a transaction cost.</p>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/does_mdl_talent_hub_cost_money/"><h3 class="question__title">Does MDL Talent Hub cost money?</h3></a>
+                    <div class="question__inner">
+                        <p>No</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#Does_MDL_Talent_Hub_cost_money"><h3 class="question__title">Does MDL Talent Hub cost money?</h3></a>
-                <div class="question__inner">
-                    <p>No</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_a_talent/"><h3 class="question__title">What is a Talent?</h3></a>
+                    <div class="question__inner">
+                        <p>A talent is everyone who is performing artist. This can be a model, a singer, an actor, a dancer, even a magician! Talents are usually people who either have a skill which they use to perform or managed to attract a fanbase with. Talents with a large fanbase, are also called influencers.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="payments">
-                <a class="question-link" href="#How_can_I_get_free_tokens"><h3 class="question__title">How can I get free tokens?</h3></a>
-                <div class="question__inner">
-                    <p>Free tokens, or &ldquo;Bounty&rdquo; can be collected in various ways. If you want to learn more about this, it is best that we refer you to an article that talks all about our bounty program which you can find <a href="https://medium.com/@dd_96182/mdl-talent-hub-bounty-campaign-55c0e60ee219" target="_blank">HERE</a>.</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_a_talent-agency/"><h3 class="question__title">What is a talent-agency?</h3></a>
+                    <div class="question__inner">
+                        <p>A talent agency is a company that functions as the middleman between the talent and the brand that needs a talent.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="tokens bounty">
-                <a class="question-link" href="#How_can_I_get_free_tokens1"><h3 class="question__title">How can I get free tokens?</h3></a>
-                <div class="question__inner">
-                    <p>Free tokens, or &ldquo;Bounty&rdquo; can be collected in various ways. If you want to learn more about this, it is best that we refer you to an article that talks all about our bounty program which you can find <a href="https://medium.com/@dd_96182/mdl-talent-hub-bounty-campaign-55c0e60ee219" target="_blank">HERE</a>.</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_a_talent-booker/"><h3 class="question__title">What is a talent-booker?</h3></a>
+                    <div class="question__inner">
+                        <p>A talent-booker is someone who actively looks for talents and connects them to brands or agencies that are looking for talents.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="payments">
-                <a class="question-link" href="#How_can_I_pay_or_get_paid"><h3 class="question__title">How can I pay or get paid</h3></a>
-                <div class="question__inner">
-                    <p>Currently there are two ways, the classic way which is through credit card or PayPal transactions or the more beneficial way: MDL Tokens</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_the_booking-ecosystem/"><h3 class="question__title">What is the booking-ecosystem?</h3></a>
+                    <div class="question__inner">
+                        <p>The booking-ecosystem is a part of the MDL Talent Hub platform where talents can look for gigs and where agencies, bookers or brands, can look for talents. When they find who or what they are looking for, they can connect with one another.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="technology">
-                <a class="question-link" href="#How_is_MDL_Talent_Hub_utilizing_blockchain_technology"><h3 class="question__title">How is MDL Talent Hub utilizing blockchain technology?</h3></a>
-                <div class="question__inner">
-                    <ol>
-<li>Transactions -&gt; faster, cheaper and worldwide availability
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_the_difference_between_a_talent_and_an_influencer/"><h3 class="question__title">What is the difference between a Talent and an Influencer?</h3></a>
+                    <div class="question__inner">
+                        <p>Both a talent and an influencer can be a performer such as an actor, singer, dancer, model, etc. the difference is that a talent, is focusing mainly on offline performances and doesn&rsquo;t necessarily have an online presence and an Influencer is focussing mostly on increasing their online presence. A talent will work more on creating offline materials while an influencer will work more on creating online exposure..</p>
 
-<ol>
-<li>Token hour benefit, learn more <a href="https://mdl.wtf/en/2018-05-06-what-is-the-mdl-token-hour-economy/" target="_blank">HERE</a>.</li>
-</ol></li>
-<li>Used to secure the reputation data. -&gt; Saving pics and videos on the decentralized storage. This means there is no centralized storage space, the information or data is divided into pieces and stored across multiple locations. The code necessary to compile this puzzle of data back to order, is called a hash sum. The hash sum is stored on the blockchain. This allows us to easily prove that file A is from person B. This will eliminate cheaters from claiming someone else&rsquo;s data, picture or video. -&gt; More about this <a href = "https://mdl.wtf/en/2017-12-05-how-mdl-secures-reputation/" target = "_blank">HERE</a></li>
-<li>Core metric collection technology. This is big data calculation that provides the number scores that define the reputation system on MDL Talent Hub</li>
-</ol>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_the_insurance-ecosystem/"><h3 class="question__title">What is the insurance-ecosystem?</h3></a>
+                    <div class="question__inner">
+                        <p>MDL Talent Hub wants to provide safety however it can. That is why we are also implementing an insurance-ecosystem that will provide a monetary safety net for talents or brands when something happens that causes an unexpected or unintended cancelation of a certain agreement.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="tokens bounty">
-                <a class="question-link" href="#What_are_MDL_Token_Hours"><h3 class="question__title">What are MDL Token Hours?</h3></a>
-                <div class="question__inner">
-                    <p>Token Hours are a sort of interest which you receive hourly, if you own MDL Tokens. Holding 1 MDL Token will earn you 1 Token Hour each hour. Holding 100 MDL Tokens will earn you 100 Token Hours each hour. With these token hours you can benefit from discounts on the platform when buying something but also when paying someone. This means that in-app purchases would be cheaper when using MDL Tokens, because you have reduced transaction fees when using MDL Token Hours. Paying someone would also be less costly because you would also have reduced transaction fees.</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_the_main_goal_of_mdl_talent_hub/"><h3 class="question__title">What is the main goal of MDL Talent Hub?</h3></a>
+                    <div class="question__inner">
+                        <p>MDL Talent Hub actually has a few goals. The main one is connecting talents to gigs and brands to their audiences but also save time and make life easier for anyone using MDL Talent Hub..</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="tokens bounty">
-                <a class="question-link" href="#What_are_MDL_Tokens"><h3 class="question__title">What are MDL Tokens?</h3></a>
-                <div class="question__inner">
-                    <p>MDL Tokens are a virtual something that you can buy, which allows you to pay and get paid on MDL Talent Hub. If you own, buy or receive an MDL Token you can choose to pay or buy something on the MDL Talent Hub platform or to cash out the value of that token into a currency of your choice (Euro, Dollar, BTC, ETH, etc.). MDL Tokens also produce Token Hours, which function as a sort of interest on the MDL Talent Hub platform.</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/what_is_the_marketplace-ecosystem/"><h3 class="question__title">What is the marketplace-ecosystem?</h3></a>
+                    <div class="question__inner">
+                        <p>The marketplace-ecosystem is a part of the MDL Talent Hub platform that allows talents to set up their own webshop and sell to their fans, allow talents to rent and sell equipment to other talents and allows brands to sell products at discounted rates to talents, where discounts are calculated based on their amount of followers. -&gt; This allows beginning talents to buy very affordable products which then in turn will get promoted whenever they perform.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_a_Talent"><h3 class="question__title">What is a Talent?</h3></a>
-                <div class="question__inner">
-                    <p>A talent is everyone who is performing artist. This can be a model, a singer, an actor, a dancer, even a magician! Talents are usually people who either have a skill which they use to perform or managed to attract a fanbase with. Talents with a large fanbase, are also called influencers.</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/who_is_mdl_talent_hub_for/"><h3 class="question__title">Who is MDL Talent Hub for?</h3></a>
+                    <div class="question__inner">
+                        <p>MDL Talent Hub is for Talents, Talent-Agencies, Talent-Bookers and Brands</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_a_talent-agency"><h3 class="question__title">What is a talent-agency?</h3></a>
-                <div class="question__inner">
-                    <p>A talent agency is a company that functions as the middleman between the talent and the brand that needs a talent.</p>
+                    </div>
+                </article>
+            
+                <article class="question">
+                    <a class="question-link" href="https://faq.mdl.live/en/categories/business-model/will_mdl_talent_hub_be_available_in_my_country/"><h3 class="question__title">Will MDL Talent Hub be available in my country?</h3></a>
+                    <div class="question__inner">
+                        <p>Yes, we aim to make MDL Talent Hub available worldwide. The problems we are solving, are everywhere. This means that our platform can grow to encompass the entire world. We have to take things step by step though so we will upscale accordingly.</p>
 
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_a_talent-booker"><h3 class="question__title">What is a talent-booker?</h3></a>
-                <div class="question__inner">
-                    <p>A talent-booker is someone who actively looks for talents and connects them to brands or agencies that are looking for talents.</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_the_booking-ecosystem"><h3 class="question__title">What is the booking-ecosystem?</h3></a>
-                <div class="question__inner">
-                    <p>The booking-ecosystem is a part of the MDL Talent Hub platform where talents can look for gigs and where agencies, bookers or brands, can look for talents. When they find who or what they are looking for, they can connect with one another.</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_the_difference_between_a_Talent_and_an_Influencer"><h3 class="question__title">What is the difference between a Talent and an Influencer?</h3></a>
-                <div class="question__inner">
-                    <p>Both a talent and an influencer can be a performer such as an actor, singer, dancer, model, etc. the difference is that a talent, is focusing mainly on offline performances and doesn&rsquo;t necessarily have an online presence and an Influencer is focussing mostly on increasing their online presence. A talent will work more on creating offline materials while an influencer will work more on creating online exposure..</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_the_insurance-ecosystem"><h3 class="question__title">What is the insurance-ecosystem?</h3></a>
-                <div class="question__inner">
-                    <p>MDL Talent Hub wants to provide safety however it can. That is why we are also implementing an insurance-ecosystem that will provide a monetary safety net for talents or brands when something happens that causes an unexpected or unintended cancelation of a certain agreement.</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_the_main_goal_of_MDL_Talent_Hub"><h3 class="question__title">What is the main goal of MDL Talent Hub?</h3></a>
-                <div class="question__inner">
-                    <p>MDL Talent Hub actually has a few goals. The main one is connecting talents to gigs and brands to their audiences but also save time and make life easier for anyone using MDL Talent Hub..</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#What_is_the_marketplace-ecosystem"><h3 class="question__title">What is the marketplace-ecosystem?</h3></a>
-                <div class="question__inner">
-                    <p>The marketplace-ecosystem is a part of the MDL Talent Hub platform that allows talents to set up their own webshop and sell to their fans, allow talents to rent and sell equipment to other talents and allows brands to sell products at discounted rates to talents, where discounts are calculated based on their amount of followers. -&gt; This allows beginning talents to buy very affordable products which then in turn will get promoted whenever they perform.</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#Who_is_MDL_Talent_Hub_for"><h3 class="question__title">Who is MDL Talent Hub for?</h3></a>
-                <div class="question__inner">
-                    <p>MDL Talent Hub is for Talents, Talent-Agencies, Talent-Bookers and Brands</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="business model">
-                <a class="question-link" href="#Will_MDL_Talent_Hub_be_available_in_my_country"><h3 class="question__title">Will MDL Talent Hub be available in my country?</h3></a>
-                <div class="question__inner">
-                    <p>Yes, we aim to make MDL Talent Hub available worldwide. The problems we are solving, are everywhere. This means that our platform can grow to encompass the entire world. We have to take things step by step though so we will upscale accordingly.</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="technology">
-                <a class="question-link" href="#Will_MDL_Talent_Hub_utilize_Artificial_Inteligence"><h3 class="question__title">Will MDL Talent Hub utilize Artificial Inteligence?</h3></a>
-                <div class="question__inner">
-                    <p>Yes, there are 3 big problems that we are focussing on fixing with AI. You can read all about it <a href = "https://medium.com/@dd_96182/how-mdl-talent-hub-is-implementing-ai-245736f98e2a" target = "_blank">HERE</a></p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="technology">
-                <a class="question-link" href="#Will_there_be_a_brand_gig_filter_on_the_platform"><h3 class="question__title">Will there be a brand/gig filter on the platform?</h3></a>
-                <div class="question__inner">
-                    <p>Yes, we are making sure that posting a collaboration request or gig availability will be detailed enough to find it based on your interest, availability and location.</p>
-
-                </div>
-            </article>
-        
-            <article class="question" data-type="technology">
-                <a class="question-link" href="#Will_there_be_a_talent_filter_on_the_platform"><h3 class="question__title">Will there be a talent filter on the platform?</h3></a>
-                <div class="question__inner">
-                    <p>Yes, we have a system that will require new talents to specify the most asked about traits when they first set up their account, to ensure that they have higher chances of being found for gigs that match their profile.</p>
-
-                </div>
-            </article>
+                    </div>
+                </article>
+            
         
     </div>
 </main>
-
-
-
 
 
 

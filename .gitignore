@@ -2,3 +2,4 @@
 .idea
 node_modules
 hugo.exe
+package-lock.json

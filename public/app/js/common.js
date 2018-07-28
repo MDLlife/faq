@@ -484,25 +484,21 @@ function setEvents() {
 
     function setActiveMenuType() {
         var pageHref = window.location.pathname,
+            pageHrefStyled = pageHref.replace(/-|_/g , ""),
             bottomHeaderItems = $('.bottom-header__item');
         bottomHeaderItems.each(function () {
-            if (pageHref.indexOf($(this).data('type')) > -1) {
+            var dataType = $(this).data('type'),
+                dataTypeStyled = dataType.replace(/_/g , "");
+            if (pageHrefStyled.indexOf(dataTypeStyled) > -1) {
                 $(this).addClass('bottom-header__item_selected');
             }
         });
     }
     setActiveMenuType();
 
-    // Click event on question block
-    $('.question').click(function () {
-        if ($(this).hasClass('question_opened')) {
-            $(this).removeClass('question_opened');
-            $('.question').removeClass('question_opened');
-        } else {
-            $('.question').removeClass('question_opened');
-            $(this).addClass('question_opened');
-        }
-
+    //Click event on question block
+    $('.question_opened .question__title').click(function () {
+        window.location.replace(window.location.origin);
     });
 
     // Creating sticky header
@@ -526,13 +522,9 @@ function setEvents() {
 // Initialization
 $(document).ready(function () {
     (function () {
-        var defaultPageHref     = window.location.origin + '/',
-            currentPageHref     = window.location.href,
-            currentHTMLLang     = $('html').attr('lang'),
-            currentPageHrefLang = defaultPageHref + currentHTMLLang + '/';
-        if (currentPageHref === defaultPageHref || currentPageHref === currentPageHrefLang) {
-            window.location.replace(currentPageHref + 'types/business-model/');
-        }
+        $('.bottom-header__item').each(function () {
+           $(this).find('a').text( $(this).text().replace(/_/g , " ") )
+        });
     })();
     setEvents();
     setDefaultStates();
