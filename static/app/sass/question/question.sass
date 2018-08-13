@@ -23,17 +23,19 @@
 			display: block
 		.question__title
 			&:before
+				top: 0
 				transform: rotate(45deg)
 				background-color: #ff2394
 			&:after
+				top: 0
 				transform: rotate(-45deg)
 				background-color: #ff2394
 	@media (max-width: 768px)
 		margin-top: 45px
-		padding: 0 0 0 70px
+		padding: 0 0 0 0px
 		&_opened
-			padding: 30px 30px 30px 70px
+			padding: 30px 30px 30px 30px
 		&:hover
 			box-shadow: none
 		&-link
-			padding: 0 0 0 70px
+			padding: 0 0 0 0px
